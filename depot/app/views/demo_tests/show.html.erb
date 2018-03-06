@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @demo_test.name %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @demo_test.age %>
+</p>
+
+
+<%= link_to 'Edit', edit_demo_test_path(@demo_test) %> |
+<%= link_to 'Back', demo_tests_path %>

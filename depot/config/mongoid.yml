@@ -1,0 +1,27 @@
+development:
+  sessions:
+    default:
+      database: depot
+      hosts:
+        - 192.168.2.211:27017
+      options:
+        consistency: :strong
+  options:
+production:
+  sessions:
+    default:
+      database: depot
+      hosts:
+      options:
+        consistency: :strong
+  options:
+test:
+  sessions:
+    default:
+      database: hr
+      hosts:
+        - 192.168.2.211:27017
+      options:
+        read: :primary
+        max_retries: 1
+        retry_interval: 0
