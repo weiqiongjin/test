@@ -10,6 +10,9 @@
 /*#my{
 float:left;
 }*/
+#store .entry from,#store .entry from div{
+	display: inline;
+}
 #banner img{
 	float: left;
 }

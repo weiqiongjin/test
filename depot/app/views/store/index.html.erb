@@ -9,6 +9,7 @@
      <%=sanitize(product.description)%>
      <div>
      	<span class="price"><%=number_to_currency(product.price)%></span>
+     	<%= button_to '添加',line_items_path(:product_id => product )%>
      </div>
  </div>
 <% end %>
