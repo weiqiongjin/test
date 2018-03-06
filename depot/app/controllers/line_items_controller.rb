@@ -48,8 +48,9 @@ class LineItemsController < ApplicationController
     # @line_item = LineItem.new(params[:line_item])
     @cart=current_cart
     product=Product.find(params[:product_id])
-    puts "#{product}"
-    @line_item = @cart.line_items.build(:product=>product)
+    @line_item=@cart.add_product(product.id)
+    # puts "#{product}"
+    # @line_item = @cart.line_items.build(:product=>product)
     respond_to do |format|
       if @line_item.save
         format.html{redirect_to(@line_item.cart,:notice=>'Line item was successfully created.')}

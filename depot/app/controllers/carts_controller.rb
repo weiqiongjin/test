@@ -13,8 +13,12 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
-    @cart = Cart.find(params[:id])
-
+    begin
+       @cart = Cart.find(params[:id])
+    rescue Exception => e
+      redirect store_url,:notice => 'Invalid cart'
+    end
+   
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @cart }
@@ -72,12 +76,17 @@ class CartsController < ApplicationController
   # DELETE /carts/1
   # DELETE /carts/1.json
   def destroy
-    @cart = Cart.find(params[:id])
+    @cart=current_cart
     @cart.destroy
+    session[:cart_id]=nil
+
+    # @cart = Cart.find(params[:id])
+    # @cart.destroy
 
     respond_to do |format|
-      format.html { redirect_to carts_url }
-      format.json { head :no_content }
+      format.html { redirect_to(store_url,:notice => '你的购物车以空') }
+      format.xml{head :ok}
+      # format.json { head :no_content }
     end
   end
 end
