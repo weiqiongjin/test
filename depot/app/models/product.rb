@@ -1,5 +1,6 @@
 class Product
   include Mongoid::Document
+  # default_scope :order => 'title'#默认以title排序
   field :title, type: String
   field :description, type: String
   field :image_url, type: String
