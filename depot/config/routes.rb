@@ -4,7 +4,7 @@ Depot::Application.routes.draw do
 
   resources :carts
 
-
+  post "line_items/get_num"
   get "store/index"
 
   resources :demo_tests

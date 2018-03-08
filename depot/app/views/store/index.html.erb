@@ -9,7 +9,12 @@
      <%=sanitize(product.description)%>
      <div>
      	<span class="price"><%=number_to_currency(product.price)%></span>
-     	<%= button_to '添加',line_items_path(:product_id => product )%>
+     	<%= button_to '添加',line_items_path(:product_id => product ),:remote => true %>
      </div>
  </div>
 <% end %>
+<script type="text/javascript">
+	function ajax_add(){
+		alert("aa");
+	}
+</script>

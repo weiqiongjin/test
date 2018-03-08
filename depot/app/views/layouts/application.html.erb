@@ -14,6 +14,11 @@
  </div>
  <div id="columns">
  	<div id="side">
+ 	<div id=cart>
+ 		<%=render @cart%>
+ 	</div>
+ 	<button id="test" onclick="ajax()" value="22">ajax3</button>
+ 	<br/>
  		<a href="http://fanyi.baidu.com/">百度翻译</a>
  		</br>
  		<a href="products">图书列表</a>
@@ -22,5 +27,13 @@
 	    <%= yield %>	
 	</div>
  </div>
+ <script type="text/javascript">
+ 	function ajax(){
+ 		// alert("aa")
+ 		$.post("line_items/get_num",{data:"data"},function(tt){
+            alert(tt.data) 
+ 		});
+ 	}
+ </script>
 </body>
 </html>
