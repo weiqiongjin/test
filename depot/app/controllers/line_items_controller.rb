@@ -1,4 +1,10 @@
 class LineItemsController < ApplicationController
+  # post -
+  def get_num
+    puts ">>>>#{params}--------------"
+    num=LineItem.count
+    render json:{data:num}
+  end
   # GET /line_items
   # GET /line_items.json
   def index
