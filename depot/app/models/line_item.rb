@@ -1,5 +1,5 @@
 class LineItem
-	#在线商品
+	#在线商品--diyicixiugai
 	#讲产品放到购物车
 	#解释LineItem属于product和cart
   include Mongoid::Document
