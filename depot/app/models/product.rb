@@ -1,5 +1,5 @@
 class Product
-	# 商品-aaa
+	# 商品-aaa----ppp
   include Mongoid::Document
   # default_scope :order => 'title'#默认以title排序
   has_many :line_items#关联多个line_item
